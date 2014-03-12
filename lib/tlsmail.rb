@@ -5,13 +5,13 @@ module Net
   if defined?(SMTP)
     SMTP.class_eval do remove_const(:Revision) end
     [:SMTP, :SMTPSession].each do |c|
-      remove_const(c) if constants.include?(c.to_s)
+      remove_const(c) if constants.include?(c)
     end
   end
   if defined?(POP)
     POP.class_eval do remove_const(:Revision) end
     [:POP, :POPSession, :POP3Session, :APOPSession].each do |c|
-      remove_const(c) if constants.include?(c.to_s)
+      remove_const(c) if constants.include?(c)
     end
   end
 end
